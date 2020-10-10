@@ -53,24 +53,20 @@
 <!--------------Header--------------->
 <header>
 	<div class="wrap-header zerogrid">
-
-
-		<?php 
-			$custom_logo_id = get_theme_mod( 'custom_logo' );
-			$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-			if ( has_custom_logo() ) {
-			    echo '<img src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo( 'name' ) . '">';
-			} else {
-			    echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
-			}
-		 ?>
-
-
-		<h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-    	<h4><?php bloginfo( 'description' ); ?></h4>
-		<div id="logo"><a href="#">
-			<!-- <img src="<?php //echo get_template_directory_uri(); ?>/assets/images/logo.png"/> -->
-		</a></div>
+		<div id="logo">
+			<a href="<?php echo get_home_url( ); ?>">
+				<?php 
+					$custom_logo_id = get_theme_mod( 'custom_logo' );
+					$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+					if ( has_custom_logo() ) {
+					    echo '<img src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo( 'name' ) . '">';
+					} else {
+					    echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+					    echo '<h4>'. get_bloginfo( 'description' ) .'</h4>';
+					}
+				 ?>
+			</a>
+		</div>
 		
 		<div id="search">
 			<div class="button-search"></div>
@@ -81,25 +77,23 @@
 
 <nav>
 	<div class="wrap-nav zerogrid">
-		<div class="menu">
-			<ul>
-				<li class="current"><a href="index.html">Home</a></li>
-				<li><a href="blog.html">Blog</a></li>
-				<li><a href="gallery.html">Gallery</a></li>
-				<li><a href="single.html">About</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-		</div>
 		
-		<div class="minimenu"><div>MENU</div>
-			<select onchange="location=this.value">
+			<?php wp_nav_menu( array(
+				'theme_location'  => 'primary',
+				'container'       => 'div',
+				'container_class' => 'menu',
+				'before'          => '',
+				'after'           => '',
+				
+			) ); ?>		
+			<!-- <select onchange="location=this.value">
 				<option></option>
 				<option value="index.html">Home</option>
 				<option value="blog.html">Blog</option>
 				<option value="gallery.html">Gallery</option>
 				<option value="single.html">About</option>
 				<option value="contact.html">Contact</option>
-			</select>
-		</div>		
+			</select> -->
+		</div>
 	</div>
 </nav>
