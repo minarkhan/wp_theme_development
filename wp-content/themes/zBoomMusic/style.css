@@ -15,3 +15,9 @@ Text Domain:zboom
     width: 20%;
     float: right;
 }
+.tag li.cat-item{
+	padding: 10px !important;
+    background: #ED145B;
+    margin: 0px 5px 5px 0px;
+    float: left;
+}

@@ -29,6 +29,13 @@
 							</form> -->
 						</div>
 					</article>
+					<?php the_post_navigation( array(
+				            'prev_text'                  => __( 'Priview Post: %title' ),
+				            'next_text'                  => __( 'Next Post: %title' ),
+				            'in_same_term'               => true,
+				            'taxonomy'                   => __( 'post_tag' ),
+				            'screen_reader_text' => __( 'Continue Reading' ),
+				        ) ); ?>
 				</div>
 			</div>
 			<?php get_sidebar(  ); ?>

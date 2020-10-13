@@ -131,9 +131,54 @@ $labels = array(
 
 add_action( 'init', 'register_custom_slider' );
 
+function zboom_widgets(){
+	/**
+	 * Creates a sidebar
+	 */
+	
+	register_sidebar( array(
+		'name'          => __( 'Right Sidebar', 'text-domain' ),
+		'id'            => 'right_sidebar',
+		'description'   => '',
+		'class'         => '',
+		'before_widget' => '<div class="box">',
+		'after_widget'  => '</div></div>',
+		'before_title'  => '<div class="heading"><h2>',
+		'after_title'   => '</h2></div><div class="content">',
+	) );
 
 
 
+	register_sidebar( array(
+		'name'          => __( 'Footer Widgets', 'text-domain' ),
+		'id'            => 'footer_widget',
+		'description'   => '',
+		'class'         => '',
+		'before_widget' => '<div class="col-1-4">
+				<div class="wrap-col">
+					<div class="box">',
+		'after_widget'  => '</div>
+					</div>
+				</div>
+			</div>',
+		'before_title'  => '<div class="heading"><h2>',
+		'after_title'   => '</h2></div><div class="tag content">',
+	) );
+
+}
+add_action( 'widgets_init', 'zboom_widgets' );
+
+function dashboard_widget_function() {
+    echo '
+        <h2>Custom Dashboard Widget</h2>
+        <p>Custom content here</p>
+    ';
+}
+
+function add_dashboard_widgets() {
+    wp_add_dashboard_widget( 'custom_dashboard_widget', 'Custom Dashoard Widget', 'dashboard_widget_function' );
+}
+add_action( 'wp_dashboard_setup', 'add_dashboard_widgets' );
 
 
 

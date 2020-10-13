@@ -80,7 +80,7 @@ Template Name: zboom-home
 									</div>
 									<div class="col-2-3">
 										<div class="wrap-col">
-											<h2><a href="#"><?php the_title(); ?></a></h2>
+											<h2><a href="<?php the_permalink( ); ?>"><?php the_title(); ?></a></h2>
 											<div class="info">By <?php the_author(); ?> on <?php the_date( ); ?> with <a href="#">01 Commnets</a></div>
 											<p><?php the_content() ?> [...]</p>
 										</div>
@@ -92,31 +92,7 @@ Template Name: zboom-home
 					
 				</div>
 			</div>
-			<div class="col-1-3">
-				<div class="wrap-col">
-					<div class="box">
-						<div class="heading"><h2>Latest Albums</h2></div>
-						<div class="content">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/albums.png"/>
-						</div>
-					</div>
-					<div class="box">
-						<div class="heading"><h2>Upcoming Events</h2></div>
-						<div class="content">
-							<div class="list">
-								<ul>
-									<li><a href="#">Magic Island Ibiza</a></li>
-									<li><a href="#">Bamboo Is Just For You</a></li>
-									<li><a href="#">Every Hot Summer</a></li>
-									<li><a href="#">Magic Island Ibiza</a></li>
-									<li><a href="#">Bamboo Is Just For You</a></li>
-									<li><a href="#">Every Hot Summer</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<?php get_sidebar(); ?>
 		</div>
 	</div>
 </section>

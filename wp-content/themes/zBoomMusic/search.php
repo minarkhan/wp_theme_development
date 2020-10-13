@@ -6,6 +6,19 @@
 			<div class="col-2-3">
 				<div class="wrap-col">
 
+
+					<h2>Result:</h2>
+					<?php 
+						global $wp_query;
+						$total_result= $wp_query->found_posts;
+						if($total_result>0){
+							echo "Result Found " . $total_result;
+
+						} else{
+							echo "Result Not found";
+						}
+					 ?>
+
 					<?php if(have_posts()): while(have_posts()):the_post(); ?>
 
 					<article>
@@ -31,8 +44,6 @@
 						<li><a href="#">4</a></li>
 						<li><a href="#">next</a></li>
 					</ul>
-
-					
 
 				</div>
 			</div>
