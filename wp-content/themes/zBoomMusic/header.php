@@ -56,7 +56,7 @@
 
 	<div class="wrap-header zerogrid">
 		<div id="logo">
-			<?php get_search_form(); ?>
+			<?php //get_search_form(); ?>
 			<a href="<?php echo get_home_url( ); ?>">
 				<?php 
 					$custom_logo_id = get_theme_mod( 'custom_logo' );
